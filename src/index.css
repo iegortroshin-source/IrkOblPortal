@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 8%;
+    --foreground: 210 40% 96%;
+    --card: 210 45% 10%;
+    --card-foreground: 210 40% 96%;
+    --popover: 210 45% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 42 45% 60%;
+    --primary-foreground: 210 50% 8%;
+    --secondary: 195 35% 35%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 210 35% 15%;
+    --muted-foreground: 210 20% 70%;
+    --accent: 195 40% 40%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 210 40% 96%;
+    --border: 210 30% 20%;
+    --input: 210 30% 20%;
+    --ring: 42 45% 60%;
+    --radius: 0.625rem;
+    --sidebar-background: 210 50% 8%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 42 45% 60%;
+    --sidebar-primary-foreground: 210 50% 8%;
+    --sidebar-accent: 210 35% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 210 30% 20%;
+    --sidebar-ring: 42 45% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-baikal-deep text-baikal-snow antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 600;
+  }
+  
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-baikal-ochre to-baikal-terracotta;
+  }
+  
+  .glass {
+    @apply bg-baikal-deep/80 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-light {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-baikal-ochre text-baikal-deep font-semibold rounded-lg 
+           transition-all duration-300 hover:bg-baikal-ochre/90 hover:scale-[1.02]
+           hover:shadow-glow-ochre active:scale-[0.98];
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border border-baikal-ice text-baikal-snow 
+           font-semibold rounded-lg transition-all duration-300 
+           hover:bg-baikal-ice/10 hover:border-baikal-ochre;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-400 hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 
+           after:w-0 after:bg-baikal-ochre after:transition-all after:duration-300
+           hover:after:w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D6B7A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4A90A4;
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 168, 108, 0.3);
+  color: #F5F7FA;
+}
+
+/* Leaflet map custom styles */
+.leaflet-container {
+  background: #0A1628 !important;
+}
+
+/* Season transition */
+.season-summer {
+  --accent-primary: #4A7C59;
+  --accent-secondary: #C9A86C;
+}
+
+.season-winter {
+  --accent-primary: #4A90A4;
+  --accent-secondary: #E8F4F8;
+}
